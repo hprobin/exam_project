@@ -8,9 +8,6 @@ pageEncoding="UTF-8"%>
 <head>
 	<title>메인 페이지</title>
 </head>
-
- 
-
 <body>
 	<%=new Date()%>
 	<h2>Hello World</h2>
