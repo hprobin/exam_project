@@ -12,4 +12,5 @@ pageEncoding="UTF-8"%>
 	<%=new Date()%>
 	<h2>Hello World</h2>
 	<a href="createExamNum">링크1123</a><br/>
+	<a href="ResultInsert">성적 조회</a>
 </body>

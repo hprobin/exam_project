@@ -55,4 +55,44 @@ public class RegisterDao {
 		}
 		return null;
 	}
+	
+	boolean SelectOk(ResultDto resultDto){
+		String sql = "select number from mAnswer where number=?;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, resultDto.getNumber()); // 수험번호
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				if(rs.getString("number").equals(resultDto.getNumber())) {
+					return true;
+				}
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
+	
+	ResultSet resultSelect(HttpServletRequest request) {
+		String sql = "select * from mAnswer where number=?;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			System.out.println(request.getParameter("number"));
+			
+			pstmt.setString(1, request.getParameter("number"));
+			
+			ResultSet rs = pstmt.executeQuery();
+	
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	
 }
