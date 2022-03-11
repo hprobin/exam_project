@@ -10,17 +10,6 @@
 </head>
 <body style="margin-top:20%">
    <%=new Date()%>
-   <!-- <form method="post" action="createNumber">
-      <h1>접수 하기</h1>
-      <label for="name">이름 : </label>
-      <input type="text" name="name" value="이름을 입력하세요"><br>
-      <label for="text">주민등록번호 : </label>
-      <input type="number" name="number">
-      <p> - </p>
-      <input type="password" name="number2">
-      
-      <input type="submit" value="전송"/><br>
-   </form> -->
    
    <form method="post" action="createNumber">
     <table border="1" bordercolor="#A9E2F3" align="center" style="border-collapse:collapse">
