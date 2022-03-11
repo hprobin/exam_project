@@ -16,9 +16,10 @@ public class RegisterController {
 	String CreateNumber(HttpServletRequest request) {
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
-		System.out.println(name + number);
+		String number2 = request.getParameter("number2");
+		System.out.println(name + number + number2);
 		
-		RegisterDto registerdto = new RegisterDto(name, number);
+		RegisterDto registerdto = new RegisterDto(name, number, number2);
 		
 		if(registerdao.Insert(registerdto)) {
 			//model.addAttribute("result", RegisterDao.Select());
