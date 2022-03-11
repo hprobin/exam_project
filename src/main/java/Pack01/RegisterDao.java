@@ -7,29 +7,31 @@ import java.sql.ResultSet;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class RegisterDao {
-   /*@Autowired
-   ConnectionProvider conn;*/
-   
-   RegisterDao(){ }
-   
-   boolean Insert(RegisterDto registerDto){
-      String sql = "insert into member values(null, ?, ?, null, null);";
-      try {
-			/* Connection conn = ConnectionProvider.getConnection();
-			 PreparedStatement pstmt = conn.prepareStatement(sql);
-			
-			 pstmt.setString(1, registerDto.getName());
-			 pstmt.setString(2, registerDto.getNumber());
-			 int rs = pstmt.executeUpdate();
-			
-			 if(rs>=1)
-			 {
-			return true;
-			 }*/
-      }catch (Exception e) {
-         // TODO: handle exception
-         System.out.println(e.getMessage());
-      }
-      return false;
-   }
+	@Autowired
+	ConnectionDB conn;
+
+	RegisterDao(){ }
+
+	boolean Insert(RegisterDto registerDto){
+		String sql = "insert into member values(?, ?, ?, now(), ?);";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, 1);
+			pstmt.setString(2, "1");
+			pstmt.setString(3, "2");
+			pstmt.setInt(4, 4);			
+
+			int rs = pstmt.executeUpdate();
+
+			if(rs>=1)
+			{
+				return true;
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
 }

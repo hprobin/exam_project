@@ -11,5 +11,5 @@ pageEncoding="UTF-8"%>
 <body>
 	<%=new Date()%>
 	<h2>Hello World</h2>
-	<a href="t1">링크1</a><br/>
+	<a href="Views/createExamNum.jsp">링크1123</a><br/>
 </body>

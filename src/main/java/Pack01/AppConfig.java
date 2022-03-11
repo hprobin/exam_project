@@ -9,5 +9,8 @@ public class AppConfig {
 	RegisterDao registerDao() {
 		return new RegisterDao();
 	}
-
+	@Bean
+	ConnectionDB connectionDB() {
+		return new ConnectionDB();
+	}
 }

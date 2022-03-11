@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class RegisterController {
 	@Autowired
@@ -20,10 +19,10 @@ public class RegisterController {
 		
 		RegisterDto registerdto = new RegisterDto(name, number);
 		
-		/*if(RegisterDao.Insert(registerdto)) {
-			model.addAttribute("result", RegisterDao.Select());
+		if(registerdao.Insert(registerdto)) {
+			//model.addAttribute("result", RegisterDao.Select());
 			return "recExamNum";
-		}*/
+		}
 		return null;
 	}
 	
