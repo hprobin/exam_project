@@ -13,7 +13,7 @@ public class RegisterController {
 	RegisterDao registerdao;
 	
 	@RequestMapping("/createNumber")
-	String CreateNumber(HttpServletRequest request) {
+	String CreateNumber(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
 		String number2 = request.getParameter("number2");
@@ -22,7 +22,7 @@ public class RegisterController {
 		RegisterDto registerdto = new RegisterDto(name, number, number2);
 		
 		if(registerdao.Insert(registerdto)) {
-			//model.addAttribute("result", RegisterDao.Select());
+			model.addAttribute("result", registerdao.Select(request));
 			return "recExamNum";
 		}
 		return null;

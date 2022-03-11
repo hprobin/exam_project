@@ -3,7 +3,8 @@ package Pack01;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Random;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,20 +13,16 @@ public class RegisterDao {
 	ConnectionDB conn;
 
 	RegisterDao(){ }
-	
-	Random random = new Random();
-
 	boolean Insert(RegisterDto registerDto){
-		String sql = "insert into member values(?, ?, ?, ?, now(), ?);";
+		String sql = "insert into member values"
+				+ "(concat(date_format(now(), '%d%H%i'), cast( cast( rand()*100 as unsigned) as char)), ?, ?, ?, now(), default);";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setInt(1, random.nextInt(10000)); // 수험번호
-			pstmt.setString(2, registerDto.getName()); // 이름
-			pstmt.setString(3, registerDto.getNumber()); // 주민등록번호 앞자리
-			pstmt.setString(4, registerDto.getNumber2()); // 주민등록번호 뒷자리
-			pstmt.setInt(5, 0);	// default : 0 or 1
+			pstmt.setString(1, registerDto.getName()); // 이름
+			pstmt.setString(2, registerDto.getNumber()); // 주민등록번호 앞자리
+			pstmt.setString(3, registerDto.getNumber2()); // 주민등록번호 뒷자리
 
 			int rs = pstmt.executeUpdate();
 
@@ -37,5 +34,25 @@ public class RegisterDao {
 			System.out.println(e.getMessage());
 		}
 		return false;
+	}
+	
+	ResultSet Select(HttpServletRequest request) {
+		String sql = "select number, name from member where name=? and rrn1=? and rrn2=?;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			System.out.println(request.getParameter("name"));
+			
+			pstmt.setString(1, request.getParameter("name")); // 이름
+			pstmt.setString(2, request.getParameter("number")); // 주민등록번호 앞자리
+			pstmt.setString(3, request.getParameter("number2")); // 주민등록번호 뒷자리
+			
+			ResultSet rs = pstmt.executeQuery();
+
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
 	}
 }
