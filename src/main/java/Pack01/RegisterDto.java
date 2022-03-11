@@ -3,10 +3,12 @@ package Pack01;
 public class RegisterDto {
 	String name;
 	String number;
+	String number2;
 	
-	RegisterDto(String name, String number){
+	RegisterDto(String name, String number, String number2){
 		this.name = name;
 		this.number = number;
+		this.number2 = number2;
 	}
 
 	public String getName() {
@@ -23,6 +25,14 @@ public class RegisterDto {
 
 	public void setNumber(String number) {
 		this.number = number;
+	}
+	
+	public String getNumber2() {
+		return number2;
+	}
+	
+	public void setNumber2(String number2) {
+		this.number2 = number2;
 	}
 	
 	
