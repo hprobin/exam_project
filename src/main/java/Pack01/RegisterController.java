@@ -13,9 +13,10 @@ public class RegisterController {
 	RegisterDao registerdao;
 	
 	@RequestMapping("/createNumber")
-	String CreateNumber(Model model, HttpServletRequest requset) {
-		String name = requset.getParameter("name");
-		String number = requset.getParameter("number");
+	String CreateNumber(HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String number = request.getParameter("number");
+		System.out.println(name + number);
 		
 		RegisterDto registerdto = new RegisterDto(name, number);
 		

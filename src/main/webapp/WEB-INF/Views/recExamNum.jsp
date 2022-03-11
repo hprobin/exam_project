@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>멤버값 저장 성공</h1>
 </body>
 </html>

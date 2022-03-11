@@ -24,5 +24,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/Views/" />	
 		</mvc:view-resolvers>
+		
+		<mvc:view-controller path="/createExamNum" view-name="createExamNum"/>
 	
 </beans>

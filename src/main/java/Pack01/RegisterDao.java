@@ -18,10 +18,10 @@ public class RegisterDao {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setInt(1, 1);
-			pstmt.setString(2, "1");
-			pstmt.setString(3, "2");
-			pstmt.setInt(4, 4);			
+			pstmt.setInt(1, 12);
+			pstmt.setString(2, registerDto.getName());
+			pstmt.setString(3, registerDto.getNumber());
+			pstmt.setInt(4, 0);			
 
 			int rs = pstmt.executeUpdate();
 
