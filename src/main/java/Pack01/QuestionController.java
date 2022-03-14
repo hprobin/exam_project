@@ -31,9 +31,13 @@ public class QuestionController {
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
 		TesterDto testerDto = new TesterDto(name, number);
+		System.out.println(name + number);
 		
-		if (questionDao.Select(testerDto)) {
-			return "QuestionView";
+		if (questionDao.Select(testerDto) ) {
+			if (questionDao.QuizInsert(testerDto)) {
+				model.addAttribute("result", questionDao.QuizIndex(testerDto));
+				return "QuestionView";
+			}
 		}
 		return "ExamView";
 	}

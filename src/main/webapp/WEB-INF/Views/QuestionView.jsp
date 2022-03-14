@@ -17,7 +17,7 @@
 		<%
 		//ResultSet rs = (ResultSet) request.getAttribute("result");
 			//out.println("<td>" + quesionDto.getIndex()+"</td>");
-			List<QuestionDto> list = (List) request.getAttribute("result");
+			List<QuestionDto> list = (ArrayList) request.getAttribute("result");
 			//QuestionDto list = (QuestionDto) request.getAttribute("result");
 		%>
 		

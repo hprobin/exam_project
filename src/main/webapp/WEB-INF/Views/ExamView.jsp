@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <td bgcolor="#E6E6E6" align="center"><b>수험번호 : </b></td>
-          <td width="500"><input type="text" name="number " value="" size="20" maxlength="10"></td>
+          <td width="500"><input type="text" name="number" value="" size="20" maxlength="10"></td>
         </tr>
       </tbody>
       </table>
