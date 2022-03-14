@@ -13,4 +13,5 @@ pageEncoding="UTF-8"%>
 	<h2>Hello World</h2>
 	<a href="createExamNum">링크1123</a><br/>
 	<a href="ResultInsert">성적 조회</a>
+	<a href="SelectNum">수검번호 조회</a>
 </body>
