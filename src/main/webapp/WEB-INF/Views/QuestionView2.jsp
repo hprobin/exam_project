@@ -1,35 +1,33 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Out"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Pack01.QuestionDto"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
-<h1>¹®Á¦ ÃâÁ¦2</h1>
+<h1>ìˆ˜ê²€ë²ˆí˜¸ê°€ ì˜ëª» ë˜ì—ˆê±°ë‚˜ ì´ë¯¸ ì‹œí—˜ì„ ì™„ë£Œ í•˜ì˜€ìŠµë‹ˆë‹¤.</h1>
 		<%
-			//QuestionDto list = (QuestionDto) request.getAttribute("result");
-			//List<QuestionDto> list = (List) request.getAttribute("result");
+			List<QuestionDto> list = (ArrayList) request.getAttribute("result");
 			
 		%>
 		
-		<% 
-			//out.println("<h1>" + list.getQues()+ "</h1>");
-			//out.println("<input type ='radio' name = 'n' value = 1 >" + list.getN1());
-			//out.println("<input type ='radio' name = 'n' value = 2 >" + list.getN2());
-			//out.println("<input type ='radio' name = 'n' value = 3 >" + list.getN3());
-			//out.println("<input type ='radio' name = 'n' value = 4 >" + list.getN4() + "</br>");	
-			out.println("<h1>" + list.get(1).getQues()+ "</h1>");
-			out.println("<input type ='radio' name = 'n' value = 1 >" + list.get(1).getN1());
-			out.println("<input type ='radio' name = 'n' value = 2 >" + list.get(1).getN2());
-			out.println("<input type ='radio' name = 'n' value = 3 >" + list.get(1).getN3());
-			out.println("<input type ='radio' name = 'n' value = 4 >" + list.get(1).getN4() + "</br>");	
+		<% 	
+			out.println("<h1>" + list.get(0).getQues()+ "</h1>");
+			out.println("<input type ='radio' name = 'n' value = 1 >" + list.get(0).getN1());
+			out.println("<input type ='radio' name = 'n' value = 2 >" + list.get(0).getN2());
+			out.println("<input type ='radio' name = 'n' value = 3 >" + list.get(0).getN3());
+			out.println("<input type ='radio' name = 'n' value = 4 >" + list.get(0).getN4() + "</br>");	
 		%>
-			<button onclick='location="Question3"'>´ÙÀ½¹®Á¦</button>
+<button onclick='location="Question2"'>ë‹¤ìŒë¬¸ì œ</button>
+
 
 </body>
 </html>

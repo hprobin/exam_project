@@ -63,7 +63,7 @@ public class RegisterController {
 		@RequestMapping("/SelectAllMember")
 		String SelectAllMember(HttpServletRequest request, Model model) {
 				model.addAttribute("selectAll", registerdao.SelectAll());
-				return "SelectAllMember";
+				return "SelectAllMember"; 
 		}
 	
 }

@@ -24,29 +24,29 @@ public class QuestionController {
 	String f1() {
 		return "ExamView";
 	}
-	
-	
+
 	@RequestMapping("/examStart")
-	String QuestionStart(HttpServletRequest request, Model model) {
+	String ExamStart(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
+
+		System.out.println(name + number);
 		TesterDto testerDto = new TesterDto(name, number);
+		int index = questionDao.SelectQuizIndex(number);
 		
-		if (questionDao.Select(testerDto)) {
-			return "QuestionView";
+		if(questionDao.Select(testerDto)) {
+			if (questionDao.QuizInsert(testerDto)) {
+				model.addAttribute("result", questionDao.QuizIndex(testerDto, 1));
+				model.addAttribute("resultnum", 1);
+				return "QuestionView";
+			}else if(index > 0){
+				model.addAttribute("result", questionDao.QuizIndex(testerDto, index));
+				model.addAttribute("resultnum", index);
+				return "QuestionView";
+			}
 		}
-		return "ExamView";
+		//예외처리
+		return "QuestionView2";
 	}
-	
-//	@RequestMapping("/Exam")
-//	String Question(Model model) {
-//		model.addAttribute("result", questionDao.QuizIndex()); 
-//		return "QuestionView";
-//	}
-//	@RequestMapping("/Question2")
-//	String Question2(Model model, HttpServletRequest request) {
-//
-//		model.addAttribute("index", questionDao.Select(request));
-//		return "QuestionView2";
-//	}
+
 }
