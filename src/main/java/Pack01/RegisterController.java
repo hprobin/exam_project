@@ -28,5 +28,19 @@ public class RegisterController {
 		return null;
 	}
 	
+	@RequestMapping("/selectNum")
+	String SelectNum(HttpServletRequest request, Model model) {
+		String name = request.getParameter("name");
+		String number = request.getParameter("number");
+		String number2 = request.getParameter("number2");
+		System.out.println(name + number + number2);
+		
+		if(registerdao.Select(request) != null) {
+			model.addAttribute("selectNum", registerdao.Select(request));
+			return "recSelectNum";
+		}
+		return "../index";
+	}
+	
 	
 }
