@@ -12,4 +12,9 @@ pageEncoding="UTF-8"%>
 	<%=new Date()%>
 	<h2>Hello World</h2>
 	<a href="createExamNum">링크1123</a><br/>
+
+	<button onclick='location ="createExamNum"'>접수하기</button>
+	<button onclick='location="Exam"'>응시하기</button>
+	<button onclick='location="Result"'>성적확인</button>
+	<button onclick='location="Admin"'>관리자</button>
 </body>

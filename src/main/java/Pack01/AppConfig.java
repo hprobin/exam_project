@@ -13,4 +13,8 @@ public class AppConfig {
 	ConnectionDB connectionDB() {
 		return new ConnectionDB();
 	}
+	@Bean
+	QuestionDao questionDao() {
+		return new QuestionDao();
+	}
 }
