@@ -12,8 +12,9 @@ public class RegisterDao {
 	@Autowired
 	ConnectionDB conn;
 
-	// 수검번호 발급 메서드
 	RegisterDao(){ }
+
+	// 수검번호 발급 메서드
 	boolean Insert(RegisterDto registerDto){
 		String sql = "insert into member values"
 				+ "(concat(date_format(now(), '%d%H%i'), cast( cast( rand()*100 as unsigned) as char)), ?, ?, ?, now(), default);";
@@ -35,6 +36,27 @@ public class RegisterDao {
 			System.out.println(e.getMessage());
 		}
 		return false;
+	}
+
+	boolean checkRrn(RegisterDto registerDto){
+		String sql = "select count(name) as cnt from member where rrn1=? and rrn2=?";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, registerDto.getNumber()); // 주민등록번호 앞자리
+			pstmt.setString(2, registerDto.getNumber2()); // 주민등록번호 뒷자리
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				if(Integer.parseInt(rs.getString(1)) > 3)
+					return false;
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return true;
 	}
 
 	// 수검번호 발급시 발급된 정보 리턴 메서드 
@@ -119,13 +141,13 @@ public class RegisterDao {
 		return false;
 	}
 
-	// 전체 응시자 검색 
+	// 전체 응시자 검색(admin) 
 	ResultSet SelectAll() {
 		String sql = "select * from member;";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			
+
 			ResultSet rs = pstmt.executeQuery();
 
 			return rs;
