@@ -66,7 +66,7 @@ h1 {
 
 <body>
 	<%=new Date()%>
-
+     
 	<h1>IQ 테스트</h1><br>
 	<!-- <a href="createExamNum">링크1123</a><br/>
 	<a href="ResultInsert">성적 조회</a> -->
@@ -75,5 +75,6 @@ h1 {
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
 	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자 로그인</button>
 	<!-- <a href="SelectNum">수검번호 조회</a> -->
+
 
 </body>
