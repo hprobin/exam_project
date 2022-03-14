@@ -20,7 +20,6 @@ public class ResultInquiry {
 		ResultDto resultdto = new ResultDto(number);
 		
 		if (registerdao.SelectOk(resultdto)) {
-			System.out.println(111);
 			model.addAttribute("result", registerdao.resultSelect(request));
 			return "Result";
 		}
