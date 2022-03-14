@@ -27,5 +27,8 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		
 		<mvc:view-controller path="/createExamNum" view-name="createExamNum"/>
 		<mvc:view-controller path="/ResultInsert" view-name="ResultInsert"/>
+		<mvc:view-controller path="/SelectNum" view-name="SelectNum"/>
+		<mvc:view-controller path="/AdminLogin" view-name="AdminLogin"/>
+		<mvc:view-controller path="/AddQuestion" view-name="AddQuestion"/>
 	
 </beans>
