@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>수험번호 조회</title>
+<title>전체 응시자 조회</title>
 <style>
 @font-face {
     font-family: 'twaysky';
@@ -47,56 +47,37 @@ th, td {
     padding: 10px;
 }
 
-.btn {
-    position: relative;
-    border: none;
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-weight: 300;
-    transition: 0.25s;
-    margin: 7%;
-    font-size: 30px;
-}
-
-.btn-a {
-    /* background-color: #F5C836; */
-}
-
-.btn-a-outline:hover {
-    background-color: #fce205;
-    color: #6e6e6e;
-}
-
-.btn:hover {
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
-} 
 </style>
 </head>
 <body>
-	<h1>수험 번호 발급</h1>
+	<h1>전체 응시자 조회</h1>
 	<table>
 		<tr>
-			<th>회차</th>
+			<th>Index</th>
 			<th>수험번호</th>
 			<th>이름</th>
+			<th>주민번호 앞자리</th>
+			<th>주민번호 뒷자리</th>
+			<th>시험응시 현황</th>
 		</tr>
 		<%
 		int count = 1;
-		ResultSet rs = (ResultSet) request.getAttribute("result");
+		ResultSet rs = (ResultSet) request.getAttribute("selectAll");
 		while (rs.next()) {
 			
 			out.println("<tr>");
 			String number = rs.getString("number");
 			String name = rs.getString("name");
+			String rrn1 = rs.getString("rrn1");
+			String rrn2 = rs.getString("rrn2");
+			String exam = rs.getString("exam_ox");
 
 			out.println("<td>" + count + "</td>");
 			out.println("<td>" + number + "</td>");
 			out.println("<td>" + name + "</td>");
+			out.println("<td>" + rrn1 + "</td>");
+			out.println("<td>" + rrn2 + "</td>");
+			out.println("<td>" + exam + "</td>");
 
 			out.println("</tr>");
 			count++;
@@ -104,8 +85,5 @@ th, td {
 		}
 		%>
 	</table>
-	
-	<button class="btn btn-a" onclick="location.href='index.jsp' ">메 인</button>
-	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button>
 </body>
 </html>

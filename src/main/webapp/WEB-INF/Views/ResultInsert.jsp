@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*, java.text.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>시험 접수</title>
+<title>성적 조회</title>
 
 <style>
 @font-face {
@@ -105,25 +102,16 @@ body {
 
 <body>
 	<div class="center">
-		<h1>시험 접수</h1>
-		<form method="post" action="createNumber">
+		<h1>성적 조회</h1>
+		<form method="post" action="result">
 			<div class="inputbox">
-				<input type="text" name="name" size="20" maxlength="10"
-					required="required"> <span>이 름</span>
-			</div>
-			<div class="inputbox">
-				<input type="text" name="number" value="" size="6" maxlength="6"
-					required="required"> <span>주민등록 번호</span>
-			</div>
-			<div class="inputbox">
-				<input type="password" name="number2" value="" size="7"
-					maxlength="7" required="required"> <span>뒷 자리</span>
+				<input type="text" name="number" size="20" maxlength="10"
+					required="required"> <span>수검번호</span>
 			</div>
 			<div class="inputbox">
 				<input type="submit" value="전송"/><br>
 			</div>
 		</form>
 	</div>
-
 </body>
 </html>

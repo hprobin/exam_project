@@ -11,6 +11,11 @@ public class RegisterDto {
 		this.number2 = number2;
 	}
 
+	RegisterDto(String name, String number){
+		this.name = number;
+		this.number = name;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -34,6 +39,4 @@ public class RegisterDto {
 	public void setNumber2(String number2) {
 		this.number2 = number2;
 	}
-	
-	
 }
