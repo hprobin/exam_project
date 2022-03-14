@@ -73,7 +73,7 @@ h1 {
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button>
 	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
-	<button class="btn btn-a" onclick="location.href='' ">관리자 로그인</button>
+	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자 로그인</button>
 	<!-- <a href="SelectNum">수검번호 조회</a> -->
 
 </body>

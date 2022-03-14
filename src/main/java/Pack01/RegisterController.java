@@ -12,6 +12,7 @@ public class RegisterController {
 	@Autowired
 	RegisterDao registerdao;
 	
+	//수검번호 생성
 	@RequestMapping("/createNumber")
 	String CreateNumber(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
@@ -28,6 +29,7 @@ public class RegisterController {
 		return null;
 	}
 	
+	//수검번호 검색(예외처리 해야함)
 	@RequestMapping("/selectNum")
 	String SelectNum(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
@@ -42,5 +44,26 @@ public class RegisterController {
 		return "../index";
 	}
 	
+	// 관리자 로그인
+	@RequestMapping("/AdminLogin")
+	String AdminLogin(HttpServletRequest request, Model model) {
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+
+		RegisterDto admindto = new RegisterDto(id, pwd);
+		System.out.println(id + pwd);
+		
+		if(registerdao.Adminlogin(admindto)) {
+			return "AdminPage";
+		}
+		return null;
+	}
+	
+	//수검번호 검색(예외처리 해야함)
+		@RequestMapping("/SelectAllMember")
+		String SelectAllMember(HttpServletRequest request, Model model) {
+				model.addAttribute("selectAll", registerdao.SelectAll());
+				return "SelectAllMember";
+		}
 	
 }
