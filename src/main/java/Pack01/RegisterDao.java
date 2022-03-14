@@ -12,6 +12,7 @@ public class RegisterDao {
 	@Autowired
 	ConnectionDB conn;
 
+	// 수검번호 발급 메서드
 	RegisterDao(){ }
 	boolean Insert(RegisterDto registerDto){
 		String sql = "insert into member values"
@@ -35,18 +36,19 @@ public class RegisterDao {
 		}
 		return false;
 	}
-	
+
+	// 수검번호 발급시 발급된 정보 리턴 메서드 
 	ResultSet Select(HttpServletRequest request) {
 		String sql = "select number, name from member where name=? and rrn1=? and rrn2=?;";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			System.out.println(request.getParameter("name"));
-			
+
 			pstmt.setString(1, request.getParameter("name")); // 이름
 			pstmt.setString(2, request.getParameter("number")); // 주민등록번호 앞자리
 			pstmt.setString(3, request.getParameter("number2")); // 주민등록번호 뒷자리
-			
+
 			ResultSet rs = pstmt.executeQuery();
 
 			return rs;
@@ -55,7 +57,8 @@ public class RegisterDao {
 		}
 		return null;
 	}
-	
+
+	// 결과보기 jsp
 	boolean SelectOk(ResultDto resultDto){
 		String sql = "select number from mAnswer where number=?;";
 		try {
@@ -76,23 +79,60 @@ public class RegisterDao {
 		}
 		return false;
 	}
-	
+
+	// 결과보기 jsp
 	ResultSet resultSelect(HttpServletRequest request) {
 		String sql = "select * from mAnswer where number=?;";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			System.out.println(request.getParameter("number"));
-			
+
 			pstmt.setString(1, request.getParameter("number"));
-			
+
 			ResultSet rs = pstmt.executeQuery();
-	
+
 			return rs;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return null;
 	}
-	
+
+	// adminlogin
+	boolean Adminlogin(RegisterDto adminDto){
+		String sql = "select number from member where number=? and name=?;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, adminDto.getNumber()); // 아이디
+			pstmt.setString(2, adminDto.getName()); // 비밀번호
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				return true;
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
+
+	// 전체 응시자 검색 
+	ResultSet SelectAll() {
+		String sql = "select * from member;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+
 }
