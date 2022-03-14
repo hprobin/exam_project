@@ -43,12 +43,12 @@ h1 {
     text-decoration: none;
     font-weight: 300;
     transition: 0.25s;
-    margin: 10px;
-    font-size: 38px;
+    margin: 1%;
+    font-size: 30px;
 }
 
 .btn-a {
-    background-color: #F5C836;
+    /* background-color: #F5C836; */
 }
 
 .btn-a-outline:hover {

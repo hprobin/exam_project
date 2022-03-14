@@ -47,7 +47,7 @@ th, td {
     padding: 10px;
 }
 
-/* .btn {
+.btn {
     position: relative;
     border: none;
     display: inline-block;
@@ -57,12 +57,12 @@ th, td {
     text-decoration: none;
     font-weight: 300;
     transition: 0.25s;
-    margin: 10px;
-    font-size: 38px;
+    margin: 7%;
+    font-size: 30px;
 }
 
 .btn-a {
-    background-color: #F5C836;
+    /* background-color: #F5C836; */
 }
 
 .btn-a-outline:hover {
@@ -74,7 +74,7 @@ th, td {
     letter-spacing: 2px;
     transform: scale(1.2);
     cursor: pointer;
-} */
+} 
 </style>
 </head>
 <body>
@@ -104,5 +104,8 @@ th, td {
 		}
 		%>
 	</table>
+	
+	<button class="btn btn-a" onclick="location.href='index.jsp' ">메 인</button>
+	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button>
 </body>
 </html>
