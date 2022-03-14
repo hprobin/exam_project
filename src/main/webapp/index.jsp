@@ -43,12 +43,12 @@ h1 {
     text-decoration: none;
     font-weight: 300;
     transition: 0.25s;
-    margin: 10px;
-    font-size: 38px;
+    margin: 1%;
+    font-size: 30px;
 }
 
 .btn-a {
-    background-color: #F5C836;
+    /* background-color: #F5C836; */
 }
 
 .btn-a-outline:hover {
@@ -71,9 +71,9 @@ h1 {
 	<!-- <a href="createExamNum">링크1123</a><br/>
 	<a href="ResultInsert">성적 조회</a> -->
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button>
-	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button>
-	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
-	<button class="btn btn-a" onclick="location.href='' ">관리자 로그인</button>
+	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button>
+	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button><br>
+	<button onclick="location.href='' ">관리자 로그인</button>
 	<!-- <a href="SelectNum">수검번호 조회</a> -->
 
 </body>
