@@ -85,6 +85,7 @@ public class RegisterController {
 			e.printStackTrace();
 		}
 		return "notFoundNumber";		
+		}
 
 	@RequestMapping("/SelectAllQuize")
 	String SelectAllQuestion(HttpServletRequest request, Model model) {

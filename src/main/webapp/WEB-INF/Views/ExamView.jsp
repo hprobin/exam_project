@@ -115,7 +115,7 @@ body {
    
 }
 
-.inputbox-lefts:hover [type="submit"] {
+.inputbox-left:hover [type="submit"] {
    background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 
