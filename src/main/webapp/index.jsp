@@ -25,7 +25,7 @@ body {
 }
 
 h1 {
-	font-size: 130px;
+	font-size: 80px;
 	font-weight: 400;
 	margin-top: 6%;
 	text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;
@@ -62,7 +62,7 @@ h1 {
 <body>
 	<%=new Date()%>
      
-	<h1>IQ 테스트</h1><br>
+	<h1>🤷‍♀️우리 강사님은 어떤분일까요~?🤷‍♂️</h1><br>
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button><br>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
 	<button class="btn btn-a" onclick="location.href='FindNumber' ">수험번호찾기</button><br>

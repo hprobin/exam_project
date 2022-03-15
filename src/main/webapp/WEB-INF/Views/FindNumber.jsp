@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>�����ȣ ã��</title>
+<meta charset="UTF-8">
+<title>수험번호 찾기</title>
 </head>
 <style>
 @font-face {
@@ -102,22 +102,22 @@ body {
 
 <body>
 	<div class="center">
-		<h1>�����ȣ ã��</h1>
+		<h1>수헙번호 찾기</h1>
 		<form method="post" action="findNum">
 			<div class="inputbox">
 				<input type="text" name="name" size="20" maxlength="10"
-					required="required"> <span>�� ��</span>
+					required="required"> <span>이 름</span>
 			</div>
 			<div class="inputbox">
 				<input type="text" name="number" value="" size="6" maxlength="6"
-					required="required"> <span>�ֹε�� ��ȣ</span>
+					required="required"> <span>주민등록 번호</span>
 			</div>
 			<div class="inputbox">
 				<input type="password" name="number2" value="" size="7"
-					maxlength="7" required="required"> <span>�� �ڸ�</span>
+					maxlength="7" required="required"> <span>뒷 자리</span>
 			</div>
 			<div class="inputbox">
-				<input type="submit" value="����"/><br>
+				<input type="submit" value="전송"/><br>
 			</div>
 		</form>
 	</div>
