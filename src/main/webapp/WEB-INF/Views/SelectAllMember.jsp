@@ -21,7 +21,7 @@
 }
 body {
 	/* background: url(img/night.jpg) no-repeat; */
-	background-color: skyblue;
+	background-color: grey;
 	/* background-size: 100%; */
 	position: relative;
 }
