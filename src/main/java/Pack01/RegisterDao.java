@@ -50,7 +50,7 @@ public class RegisterDao {
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				if(Integer.parseInt(rs.getString(1)) > 3)
+				if(rs.getInt(1) >= 3)
 					return false;
 			}
 		}catch (Exception e) {
