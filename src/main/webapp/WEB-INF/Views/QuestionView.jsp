@@ -69,7 +69,6 @@ input[type="checkbox"]:checked + label span {
 </head>
 
 <body>
-
 	<%
 		List<QuestionDto> list = (ArrayList) request.getAttribute("result");
 		int index = (int)request.getAttribute("resultnum");

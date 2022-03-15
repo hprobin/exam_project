@@ -1,14 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*, java.text.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ì‹œí—˜ ì ‘ìˆ˜</title>
-
+<meta charset="EUC-KR">
+<title>¼öÇé¹øÈ£ Ã£±â</title>
+</head>
 <style>
 @font-face {
 	font-family: 'twaysky';
@@ -105,22 +102,22 @@ body {
 
 <body>
 	<div class="center">
-		<h1>ì‹œí—˜ ì ‘ìˆ˜</h1>
-		<form method="post" action="createNumber">
+		<h1>¼öÇé¹øÈ£ Ã£±â</h1>
+		<form method="post" action="findNum">
 			<div class="inputbox">
 				<input type="text" name="name" size="20" maxlength="10"
-					required="required"> <span>ì´ ë¦„</span>
+					required="required"> <span>ÀÌ ¸§</span>
 			</div>
 			<div class="inputbox">
 				<input type="text" name="number" value="" size="6" maxlength="6"
-					required="required"> <span>ì£¼ë¯¼ë“±ë¡ ë²ˆí˜¸</span>
+					required="required"> <span>ÁÖ¹Îµî·Ï ¹øÈ£</span>
 			</div>
 			<div class="inputbox">
 				<input type="password" name="number2" value="" size="7"
-					maxlength="7" required="required"> <span>ë’· ìžë¦¬</span>
+					maxlength="7" required="required"> <span>µÞ ÀÚ¸®</span>
 			</div>
 			<div class="inputbox">
-				<input type="submit" value="ì „ì†¡"/><br>
+				<input type="submit" value="Àü¼Û"/><br>
 			</div>
 		</form>
 	</div>

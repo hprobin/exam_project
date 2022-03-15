@@ -27,11 +27,10 @@ public class QuestionDao {
 			pstmt.setString(2, testerDto.getNumber());
 
 			ResultSet rs = pstmt.executeQuery();
+			
 			System.out.println(testerDto.getNumber());
 			while(rs.next()) {
-				if (rs.getString("number").equals(testerDto.getNumber())) {					
-					return true;
-				}
+				return true;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -110,7 +109,8 @@ public class QuestionDao {
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-
+			
+			pstmt.setString(1, number);
 			pstmt.setString(1, number);
 			ResultSet rs = pstmt.executeQuery();
 
