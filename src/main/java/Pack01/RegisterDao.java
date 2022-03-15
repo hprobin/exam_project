@@ -65,7 +65,8 @@ public class RegisterDao {
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			System.out.print(request.getParameter("name"));
+
+			System.out.println(request.getParameter("name"));
 
 			pstmt.setString(1, request.getParameter("name")); // �씠由�
 			pstmt.setString(2, request.getParameter("number")); // 二쇰�쇰벑濡앸쾲�샇 �븵�옄由�
@@ -120,7 +121,7 @@ public class RegisterDao {
 		}
 		return null;
 	}
-	
+
 	// question table 異붿텧 硫붿냼�뱶
 	ResultSet resultSelect_2() {
 		String sql = "select q.index as idx, ans from question q;";
@@ -128,7 +129,7 @@ public class RegisterDao {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			
+
 			return rs;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -172,4 +173,21 @@ public class RegisterDao {
 		return null;
 	}
 
+
+
+	ResultSet SelectAllQuestion() {
+		String sql = "select * from question;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+	
+			ResultSet rs = pstmt.executeQuery();
+	
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	
 }

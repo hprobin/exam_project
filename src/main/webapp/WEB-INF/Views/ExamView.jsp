@@ -120,26 +120,34 @@ body {
 }
 
 </style>
-
 </head>
 <body>
       <div class="center">
 		<h1>시험 응시</h1>
-		<form method="post" action="createNumber">
+
+		<form method="post" action="examStart" >
 			<div class="inputbox">
 				<input type="text" name="name" size="20" maxlength="10"
 					required="required"> <span>이 름</span>
 			</div>
+			
 			<div class="inputbox">
 				<input type="text" name="number" value="" size="8" maxlength="8"
 					required="required"> <span>수험번호</span>
 			</div>
+
 			<div class="inputbox-left">
 				<input type="submit" value="전송"/>
 			</div>
 			<div class="inputbox-left">
 				<input type="submit" value="메인" onClick="location.href='index.jsp'"/>
+
 			</div>
+
+			<div class="inputbox-left">
+				<input type="submit" value="메인" onClick="location.href='index.jsp'" />
+			</div>
+
 		</form>
 	</div>
 </body>

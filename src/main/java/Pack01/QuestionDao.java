@@ -109,7 +109,8 @@ public class QuestionDao {
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-
+			
+			pstmt.setString(1, number);
 			pstmt.setString(1, number);
 			ResultSet rs = pstmt.executeQuery();
 

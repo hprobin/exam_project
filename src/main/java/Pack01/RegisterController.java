@@ -68,6 +68,7 @@ public class RegisterController {
 		return "SelectAllMember"; 
 	}
 	
+
 	//수험번호 찾기
 	@RequestMapping("/findNum")
 	String FindNum(HttpServletRequest request, Model model) {
@@ -84,5 +85,11 @@ public class RegisterController {
 			e.printStackTrace();
 		}
 		return "notFoundNumber";		
+
+	@RequestMapping("/SelectAllQuize")
+	String SelectAllQuestion(HttpServletRequest request, Model model) {
+		model.addAttribute("result", registerdao.SelectAllQuestion());
+		return "SelectAllQuestion";
+
 	}
 }
