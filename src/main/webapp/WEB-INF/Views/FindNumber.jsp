@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>수헙번호 찾기</title>
+=======
+<title>수험번호 찾기</title>
+>>>>>>> cf52377ae1caf4224303821e4d26bb982e3bad12
 </head>
 <style>
 @font-face {

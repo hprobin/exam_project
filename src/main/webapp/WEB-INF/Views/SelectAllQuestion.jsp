@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>전체 질문 조회</title>
 <style>
 @font-face {
@@ -86,5 +86,6 @@ th, td {
 		}  
 		%>
 	</table>
+
 </body>
 </html>

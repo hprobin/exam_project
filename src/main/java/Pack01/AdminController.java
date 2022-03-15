@@ -22,7 +22,7 @@ public class AdminController {
 		String ans = request.getParameter("ans");
 
 		AdminDto admindto = new AdminDto(ques, ex1, ex2, ex3, ex4, ans);
-		
+
 		System.out.println(ques + ex1 + ex2 + ex3 + ex4 + ans);
 
 		if (adminDao.AddQuestion(admindto)) {
@@ -30,5 +30,4 @@ public class AdminController {
 		}
 		return "AddQuestion";
 	}
-
 }

@@ -144,9 +144,6 @@ body {
 
 			</div>
 
-			<div class="inputbox-left">
-				<input type="submit" value="메인" onClick="location.href='index.jsp'" />
-			</div>
 
 		</form>
 	</div>
