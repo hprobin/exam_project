@@ -68,9 +68,28 @@ public class RegisterController {
 		return "SelectAllMember"; 
 	}
 	
+
+	//수험번호 찾기
+	@RequestMapping("/findNum")
+	String FindNum(HttpServletRequest request, Model model) {
+		String name = request.getParameter("name");
+		String number = request.getParameter("number");
+		String number2 = request.getParameter("number2");
+		System.out.println(name + number + number2);
+		try {
+			if(registerdao.Select(request).next()) {
+				model.addAttribute("result", registerdao.Select(request));
+				return "recExamNum";
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "notFoundNumber";		
+
 	@RequestMapping("/SelectAllQuize")
 	String SelectAllQuestion(HttpServletRequest request, Model model) {
 		model.addAttribute("result", registerdao.SelectAllQuestion());
 		return "SelectAllQuestion";
+
 	}
 }

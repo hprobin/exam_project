@@ -16,7 +16,7 @@ public class QuestionController {
 		return "ExamView";
 	}
 
-	// 시험 시작
+	// �떆�뿕 �떆�옉
 	@RequestMapping("/examStart")
 	String ExamStart(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
@@ -41,11 +41,11 @@ public class QuestionController {
 				return "QuestionView";
 			}
 		}
-		//예외처리
+		//�삁�쇅泥섎━
 		return "notFoundNumber";
 	}
 
-	// 정답 입력 함수
+	// �젙�떟 �엯�젰 �븿�닔
 	@RequestMapping("/inputAnswer")
 	String InputAnswer(HttpServletRequest request, Model model) {
 
@@ -58,11 +58,11 @@ public class QuestionController {
 				return NextQuestion(request, model);
 		}
 		//questionDao.cntUpdate(number);
-		//예외처리
+		//�삁�쇅泥섎━
 		return "EndQuestion";
 	}
 
-	//정답 입력 후 페이지 이동 함수
+	//�젙�떟 �엯�젰 �썑 �럹�씠吏� �씠�룞 �븿�닔
 	String NextQuestion(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
