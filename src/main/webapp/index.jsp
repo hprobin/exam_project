@@ -20,9 +20,7 @@
 	text-align: center;
 }
 body {
-	/* background: url(img/night.jpg) no-repeat; */
-	background-color: skyblue;
-	/* background-size: 100%; */
+	background-color: #ADD8E6;
 	position: relative;
 }
 
@@ -45,10 +43,6 @@ h1 {
     transition: 0.25s;
     margin: 1%;
     font-size: 30px;
-}
-
-.btn-a {
-    /* background-color: #F5C836; */
 }
 
 .btn-a-outline:hover {

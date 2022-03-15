@@ -115,7 +115,7 @@ body {
    
 }
 
-.inputbox-lefts:hover [type="submit"] {
+.inputbox-left:hover [type="submit"] {
    background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 
@@ -125,7 +125,7 @@ body {
 <body>
       <div class="center">
 		<h1>시험 응시</h1>
-		<form method="post" action="createNumber">
+		<form method="post" action="examStart">
 			<div class="inputbox">
 				<input type="text" name="name" size="20" maxlength="10"
 					required="required"> <span>이 름</span>
