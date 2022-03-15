@@ -32,5 +32,6 @@
       </table>
       <input stylealign="center" type="submit" value="시험 시작하기"/><br>
       </form>
+      <button class="btn btn-a" onclick="location.href='index.jsp' ">메 인</button>
 </body>
 </html>
