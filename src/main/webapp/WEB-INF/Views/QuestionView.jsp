@@ -10,6 +10,19 @@
 <head>
 <meta charset="UTF-8">
 <title>시험중</title>
+<script>
+function noEvent() {
+    if (event.keyCode == 116) { 
+        event.keyCode= 2;
+        return false;
+    }
+    else if(event.ctrlKey && (event.keyCode==78 || event.keyCode == 82)) 
+    {
+        return false;
+    }
+   }
+   document.onkeydown = noEvent;
+</script>
 <style>
 @font-face {
     font-family: 'twaysky';
@@ -68,7 +81,7 @@ input[type="checkbox"]:checked + label span {
 </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 	<%
 		List<QuestionDto> list = (ArrayList) request.getAttribute("result");
 		int index = (int)request.getAttribute("resultnum");
