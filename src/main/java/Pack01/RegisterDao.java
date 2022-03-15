@@ -102,18 +102,35 @@ public class RegisterDao {
 		return false;
 	}
 
-	// 결과보기 jsp
+	// member join mAnswer
 	ResultSet resultSelect(HttpServletRequest request) {
-		String sql = "select * from mAnswer where number=?;";
+		String sql = "select m.number, name, q1, a1, q2, a2, q3, a3, q4, a4, q5, a5, cnt\r\n"
+				+ "from member m join mAnswer ma\r\n"
+				+ "on m.number = ma.number\r\n"
+				+ "where m.number = ?; ";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			System.out.println(request.getParameter("number"));
 
 			pstmt.setString(1, request.getParameter("number"));
 
 			ResultSet rs = pstmt.executeQuery();
 
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	
+	// question table 추출 메소드
+	ResultSet resultSelect_2() {
+		String sql = "select q.index as idx, ans from question q;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
 			return rs;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
