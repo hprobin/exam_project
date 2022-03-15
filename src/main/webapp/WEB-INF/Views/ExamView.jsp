@@ -103,6 +103,7 @@ body {
 
 </head>
 <body>
+
       <div class="center">
 		<h1>시험 응시</h1>
 		<form method="post" action="createNumber">
