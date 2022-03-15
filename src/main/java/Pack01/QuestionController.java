@@ -1,13 +1,10 @@
 package Pack01;
 
-
-
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 @Controller
 public class QuestionController {
@@ -19,6 +16,7 @@ public class QuestionController {
 		return "ExamView";
 	}
 
+	// 시험 시작
 	@RequestMapping("/examStart")
 	String ExamStart(HttpServletRequest request, Model model) {
 		String name = request.getParameter("name");
@@ -59,7 +57,7 @@ public class QuestionController {
 			if(questionDao.UpdateAnswer(index, value, number))
 				return NextQuestion(request, model);
 		}
-
+		//questionDao.cntUpdate(number);
 		//예외처리
 		return "EndQuestion";
 	}
@@ -80,7 +78,7 @@ public class QuestionController {
 			model.addAttribute("name", name);
 			return "QuestionView";
 		}
-		questionDao.cntUpdate(index);
+		questionDao.cntUpdate(Integer.parseInt(number));
 		return "EndQuestion";
 	}
 

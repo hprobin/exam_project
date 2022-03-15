@@ -61,11 +61,11 @@ public class RegisterController {
 		return "AdminLogin";
 	}
 	
-	//수검번호 검색(예외처리 해야함)
-		@RequestMapping("/SelectAllMember")
-		String SelectAllMember(HttpServletRequest request, Model model) {
-				model.addAttribute("selectAll", registerdao.SelectAll());
-				return "SelectAllMember"; 
-		}
-	
+	//admin 수검번호 전체 검색(예외처리 해야함)
+	@RequestMapping("/SelectAllMember")
+	String SelectAllMember(HttpServletRequest request, Model model) {
+		model.addAttribute("selectAll", registerdao.SelectAll());
+		return "SelectAllMember"; 
+	}
+
 }

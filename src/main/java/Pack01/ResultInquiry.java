@@ -15,12 +15,11 @@ public class ResultInquiry {
 	@RequestMapping("/result")
 	String Result(HttpServletRequest request, Model model) {
 		String number = request.getParameter("number");
-		System.out.println(number);
-
 		ResultDto resultdto = new ResultDto(number);
 		
 		if (registerdao.SelectOk(resultdto)) {
 			model.addAttribute("result", registerdao.resultSelect(request));
+			model.addAttribute("result_2", registerdao.resultSelect_2());
 			return "Result";
 		}
 		return null;
