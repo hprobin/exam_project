@@ -64,7 +64,6 @@ h1 {
 </style>
 </head>
 <body>
-<%=new Date()%>
 
 	<h1>Manage</h1><br>
 

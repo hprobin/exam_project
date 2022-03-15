@@ -115,14 +115,13 @@ body {
    
 }
 
-.inputbox-lefts:hover [type="submit"] {
+.inputbox-left:hover [type="submit"] {
    background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 
 </style>
 </head>
 <body>
-
       <div class="center">
 		<h1>시험 응시</h1>
 
@@ -145,9 +144,6 @@ body {
 
 			</div>
 
-			<div class="inputbox-left">
-				<input type="submit" value="메인" onClick="location.href='index.jsp'" />
-			</div>
 
 		</form>
 	</div>

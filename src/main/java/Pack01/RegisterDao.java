@@ -65,14 +65,13 @@ public class RegisterDao {
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
+
 			System.out.println(request.getParameter("name"));
 
 			pstmt.setString(1, request.getParameter("name")); // �씠由�
 			pstmt.setString(2, request.getParameter("number")); // 二쇰�쇰벑濡앸쾲�샇 �븵�옄由�
 			pstmt.setString(3, request.getParameter("number2")); // 二쇰�쇰벑濡앸쾲�샇 �뮮�옄由�
-
 			ResultSet rs = pstmt.executeQuery();
-
 			return rs;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());

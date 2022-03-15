@@ -20,14 +20,12 @@
 	text-align: center;
 }
 body {
-	/* background: url(img/night.jpg) no-repeat; */
-	background-color: skyblue;
-	/* background-size: 100%; */
+	background-color: #ADD8E6;
 	position: relative;
 }
 
 h1 {
-	font-size: 130px;
+	font-size: 80px;
 	font-weight: 400;
 	margin-top: 6%;
 	text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;
@@ -44,11 +42,8 @@ h1 {
     font-weight: 300;
     transition: 0.25s;
     margin: 1%;
-    font-size: 30px;
-}
-
-.btn-a {
-    /* background-color: #F5C836; */
+    font-size: 27px;
+    width : 256px;
 }
 
 .btn-a-outline:hover {
@@ -65,12 +60,10 @@ h1 {
 </head>
 
 <body>
-	<%=new Date()%>
-     
-	<h1>IQ 테스트</h1><br>
+	<h1>🤷‍♀️우리 강사님은 어떤분일까요~?🤷‍♂️</h1><br>
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button><br>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
-	<button class="btn btn-a" onclick="location.href='' ">수험번호찾기</button><br>
+	<button class="btn btn-a" onclick="location.href='FindNumber' ">수험번호찾기</button><br>
 	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button><br>
 	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자</button>
 
