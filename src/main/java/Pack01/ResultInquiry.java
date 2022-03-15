@@ -15,6 +15,7 @@ public class ResultInquiry {
 	@RequestMapping("/result")
 	String Result(HttpServletRequest request, Model model) {
 		String number = request.getParameter("number");
+		
 		ResultDto resultdto = new ResultDto(number);
 		
 		if (registerdao.SelectOk(resultdto)) {

@@ -14,7 +14,7 @@ public class RegisterDao {
 
 	RegisterDao(){ }
 
-	// 수검번호 발급 메서드
+	// �닔寃�踰덊샇 諛쒓툒 硫붿꽌�뱶
 	boolean Insert(RegisterDto registerDto){
 		String sql = "insert into member values"
 				+ "(concat(date_format(now(), '%d%H%i'), cast( cast( rand()*100 as unsigned) as char)), ?, ?, ?, now(), default);";
@@ -22,9 +22,9 @@ public class RegisterDao {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, registerDto.getName()); // 이름
-			pstmt.setString(2, registerDto.getNumber()); // 주민등록번호 앞자리
-			pstmt.setString(3, registerDto.getNumber2()); // 주민등록번호 뒷자리
+			pstmt.setString(1, registerDto.getName()); // �씠由�
+			pstmt.setString(2, registerDto.getNumber()); // 二쇰�쇰벑濡앸쾲�샇 �븵�옄由�
+			pstmt.setString(3, registerDto.getNumber2()); // 二쇰�쇰벑濡앸쾲�샇 �뮮�옄由�
 
 			int rs = pstmt.executeUpdate();
 
@@ -44,8 +44,8 @@ public class RegisterDao {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, registerDto.getNumber()); // 주민등록번호 앞자리
-			pstmt.setString(2, registerDto.getNumber2()); // 주민등록번호 뒷자리
+			pstmt.setString(1, registerDto.getNumber()); // 二쇰�쇰벑濡앸쾲�샇 �븵�옄由�
+			pstmt.setString(2, registerDto.getNumber2()); // 二쇰�쇰벑濡앸쾲�샇 �뮮�옄由�
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -59,7 +59,7 @@ public class RegisterDao {
 		return true;
 	}
 
-	// 수검번호 발급시 발급된 정보 리턴 메서드 
+	// �닔寃�踰덊샇 諛쒓툒�떆 諛쒓툒�맂 �젙蹂� 由ы꽩 硫붿꽌�뱶 
 	ResultSet Select(HttpServletRequest request) {
 		String sql = "select number, name from member where name=? and rrn1=? and rrn2=?;";
 		try {
@@ -67,9 +67,9 @@ public class RegisterDao {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			System.out.println(request.getParameter("name"));
 
-			pstmt.setString(1, request.getParameter("name")); // 이름
-			pstmt.setString(2, request.getParameter("number")); // 주민등록번호 앞자리
-			pstmt.setString(3, request.getParameter("number2")); // 주민등록번호 뒷자리
+			pstmt.setString(1, request.getParameter("name")); // �씠由�
+			pstmt.setString(2, request.getParameter("number")); // 二쇰�쇰벑濡앸쾲�샇 �븵�옄由�
+			pstmt.setString(3, request.getParameter("number2")); // 二쇰�쇰벑濡앸쾲�샇 �뮮�옄由�
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -80,14 +80,14 @@ public class RegisterDao {
 		return null;
 	}
 
-	// 결과보기 jsp
+	// 寃곌낵蹂닿린 jsp
 	boolean SelectOk(ResultDto resultDto){
 		String sql = "select number from mAnswer where number=?;";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, resultDto.getNumber()); // 수험번호
+			pstmt.setString(1, resultDto.getNumber()); // �닔�뿕踰덊샇
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -122,15 +122,15 @@ public class RegisterDao {
 		}
 		return null;
 	}
-	
-	// question table 추출 메소드
+
+	// question table 異붿텧 硫붿냼�뱶
 	ResultSet resultSelect_2() {
 		String sql = "select q.index as idx, ans from question q;";
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			
+
 			return rs;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -145,8 +145,8 @@ public class RegisterDao {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, adminDto.getNumber()); // 아이디
-			pstmt.setString(2, adminDto.getName()); // 비밀번호
+			pstmt.setString(1, adminDto.getNumber()); // �븘�씠�뵒
+			pstmt.setString(2, adminDto.getName()); // 鍮꾨�踰덊샇
 
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -158,7 +158,7 @@ public class RegisterDao {
 		return false;
 	}
 
-	// 전체 응시자 검색(admin) 
+	// �쟾泥� �쓳�떆�옄 寃��깋(admin) 
 	ResultSet SelectAll() {
 		String sql = "select * from member;";
 		try {
@@ -174,4 +174,21 @@ public class RegisterDao {
 		return null;
 	}
 
+
+
+	ResultSet SelectAllQuestion() {
+		String sql = "select * from question;";
+		try {
+			Connection conn = ConnectionDB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+	
+			ResultSet rs = pstmt.executeQuery();
+	
+			return rs;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	
 }
