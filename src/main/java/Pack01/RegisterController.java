@@ -21,12 +21,14 @@ public class RegisterController {
 		System.out.println(name + number + number2);
 		
 		RegisterDto registerdto = new RegisterDto(name, number, number2);
-		
-		if(registerdao.Insert(registerdto)) {
-			model.addAttribute("result", registerdao.Select(request));
-			return "recExamNum";
+		if(registerdao.checkRrn(registerdto)) {
+			if(registerdao.Insert(registerdto)) {
+				model.addAttribute("result", registerdao.Select(request));
+				return "recExamNum";
+			}
 		}
-		return null;
+		//예외 처리
+		return "FailCreateNum";
 	}
 	
 	//수검번호 검색(예외처리 해야함)
@@ -56,14 +58,14 @@ public class RegisterController {
 		if(registerdao.Adminlogin(admindto)) {
 			return "AdminPage";
 		}
-		return null;
+		return "AdminLogin";
 	}
 	
-	//수검번호 검색(예외처리 해야함)
-		@RequestMapping("/SelectAllMember")
-		String SelectAllMember(HttpServletRequest request, Model model) {
-				model.addAttribute("selectAll", registerdao.SelectAll());
-				return "SelectAllMember";
-		}
-	
+	//admin 수검번호 전체 검색(예외처리 해야함)
+	@RequestMapping("/SelectAllMember")
+	String SelectAllMember(HttpServletRequest request, Model model) {
+		model.addAttribute("selectAll", registerdao.SelectAll());
+		return "SelectAllMember"; 
+	}
+
 }

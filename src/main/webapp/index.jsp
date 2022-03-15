@@ -29,7 +29,7 @@ body {
 h1 {
 	font-size: 130px;
 	font-weight: 400;
-	margin-top: 13%;
+	margin-top: 6%;
 	text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;
 	text-shadow: 2px 2px 2px #000;
 }
@@ -68,13 +68,10 @@ h1 {
 	<%=new Date()%>
      
 	<h1>IQ 테스트</h1><br>
-	<!-- <a href="createExamNum">링크1123</a><br/>
-	<a href="ResultInsert">성적 조회</a> -->
-	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button>
-	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button>
+	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button><br>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
-	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자 로그인</button>
-	<!-- <a href="SelectNum">수검번호 조회</a> -->
-
+	<button class="btn btn-a" onclick="location.href='' ">수험번호찾기</button><br>
+	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button><br>
+	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자</button>
 
 </body>
