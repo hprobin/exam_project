@@ -44,7 +44,8 @@ h1 {
     font-weight: 300;
     transition: 0.25s;
     margin: 1%;
-    font-size: 30px;
+    font-size: 27px;
+    width : 256px;
 }
 
 .btn-a {
@@ -70,7 +71,7 @@ h1 {
 	<h1>IQ 테스트</h1><br>
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button><br>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
-	<button class="btn btn-a" onclick="location.href='' ">수험번호찾기</button><br>
+	<button class="btn btn-a" onclick="location.href='FindNumber' ">수험번호찾기</button><br>
 	<button class="btn btn-a" onclick="location.href='ResultInsert' ">성적조회</button><br>
 	<button class="btn btn-a" onclick="location.href='AdminLogin' ">관리자</button>
 

@@ -19,6 +19,7 @@ public class QuestionDao {
 
 	// 수검번호의 시험 응시 내역 조회
 	boolean Select(TesterDto testerDto) {
+		String sql = "select number from member where name =? and number =? and exam_ox = 'X';";
 		try {
 			Connection conn = ConnectionDB.getConnection();	
 			PreparedStatement pstmt = conn.prepareStatement(sql);
