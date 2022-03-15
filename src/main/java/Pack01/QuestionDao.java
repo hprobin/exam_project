@@ -163,7 +163,6 @@ public class QuestionDao {
 			pstmt.setString(1, Integer.toString(number));
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				System.out.println(rs.getInt("Timediff"));
 				if(rs.getInt("Timediff") < 5) {
 					return true;
 				}
@@ -182,7 +181,7 @@ public class QuestionDao {
 		try {
 			Connection conn = ConnectionDB.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-
+			System.out.println(number);
 			pstmt.setString(1, Integer.toString(number));
 
 			int rs = pstmt.executeUpdate();
