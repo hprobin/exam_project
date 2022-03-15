@@ -17,4 +17,8 @@ public class AppConfig {
 	QuestionDao questionDao() {
 		return new QuestionDao();
 	}
+	@Bean
+	AdminDao adminDao() {
+		return new AdminDao();
+	}
 }
