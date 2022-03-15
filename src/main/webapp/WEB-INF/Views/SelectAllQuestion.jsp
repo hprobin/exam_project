@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>전체 응시자 조회</title>
+<title>전체 질문 조회</title>
 <style>
 @font-face {
     font-family: 'twaysky';
@@ -46,38 +46,44 @@ th, td {
 </style>
 </head>
 <body>
-	<h1>전체 응시자 조회</h1>
+	<h1>전체 질문 조회</h1>
 	<table>
 		<tr>
 			<th>Index</th>
-			<th>수험번호</th>
-			<th>이름</th>
-			<th>주민번호 앞자리</th>
-			<th>주민번호 뒷자리</th>
-			<th>시험응시 현황</th>
+			<th>문제</th>
+			<th>선지1</th>
+			<th>선지2</th>
+			<th>선지3</th>
+			<th>선지4</th>
+			<th>정답</th>
 		</tr>
 		<%
 		int count = 1;
-		ResultSet rs = (ResultSet) request.getAttribute("selectAll");
+		ResultSet rs = (ResultSet) request.getAttribute("result");
+
 		while (rs.next()) {
-			
+				
 			out.println("<tr>");
-			String number = rs.getString("number");
-			String name = rs.getString("name");
-			String rrn1 = rs.getString("rrn1");
-			String rrn2 = rs.getString("rrn2");
-			String exam = rs.getString("exam_ox");
+			String ques = rs.getString("ques");
+			String n1 = rs.getString("n1");
+			String n2= rs.getString("n2");
+			String n3= rs.getString("n3");
+			String n4= rs.getString("n4");
+			int ans = rs.getInt("ans");
+		 	
 			
-			out.println("<td>" + count + "</td>");
-			out.println("<td>" + number + "</td>");
-			out.println("<td>" + name + "</td>");
-			out.println("<td>" + rrn1 + "</td>");
-			out.println("<td>" + rrn2 + "</td>");
-			out.println("<td>" + exam + "</td>");
+			out.println("<td>"+ count +"</td>");
+			out.println("<td>" + ques + "</td>");
+			out.println("<td>" + n1 + "</td>");
+			out.println("<td>" + n2 + "</td>");
+			out.println("<td>" + n3 + "</td>");
+			out.println("<td>" + n4 + "</td>");
+			out.println("<td>" + ans + "</td>");
+			
 			out.println("</tr>");
 			count++;
 			
-		}
+		}  
 		%>
 	</table>
 </body>
