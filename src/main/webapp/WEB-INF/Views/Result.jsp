@@ -100,7 +100,9 @@ th, td {
 		<%
 		int count = 1;
 		int score = 0;
-		int i = 0;
+		boolean pf = true;
+		String pn = "";
+		
 		ResultSet rs = (ResultSet) request.getAttribute("result"); // member join mAnswer
 		ResultSet answer = (ResultSet) request.getAttribute("result_2"); // questoin 추출
 
@@ -111,38 +113,40 @@ th, td {
 			String q[] = new String[5];
 			String a[] = new String[5];
 
-			q[0] = rs.getString("q1");
-			a[0] = rs.getString("a1");
-			q[1] = rs.getString("q2");
-			a[1] = rs.getString("a2");
-			q[2] = rs.getString("q3");
-			a[2] = rs.getString("a3");
-			q[3] = rs.getString("q4");
-			a[3] = rs.getString("a4");
-			q[4] = rs.getString("q5");
-			a[4] = rs.getString("a5");
+			for (int w = 0; w < 5; w++) {
+				q[w] = rs.getString("q" + (w + 1));
+				a[w] = rs.getString("a" + (w + 1));
+			}
 
 			while (answer.next()) {
 				String idx = answer.getString("idx");
 				String ans = answer.getString("ans");
 
-				for (int k = 0; k < 5; k++) {
-					if (q[k].equals(idx)) {
-						if (a[k].equals(ans)) {
-							score += 20;
-						}
-						score += 0;
+			for (int k = 0; k < 5; k++) {
+				if (q[k].equals(idx)) {
+					if (a[k].equals(ans)) {
+						score += 20;
 					}
+					score += 0;
+				}
 				}
 			}
-			out.println("<td>" + count + 1 + "</td>");
+
+			/* if (score >= 60) 
+				pn = "합격";
+				else {
+				pf = false;
+			} */
+			
+			pn = (score >= 60) ? "합격" : "불합격";
+
+			out.println("<td>" + count + "</td>");
 			out.println("<td>" + number + "</td>");
 			out.println("<td>" + name + "</td>");
 			out.println("<td>" + score + "</td>");
-
+			out.println("<td>" + pn + "</td>");
 			out.println("</tr>");
 			count++;
-			i++;
 		}
 		%>
 	</table>
