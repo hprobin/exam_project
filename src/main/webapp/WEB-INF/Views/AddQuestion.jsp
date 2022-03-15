@@ -61,7 +61,6 @@ input {
 </style>
 </head>
 <body>
-   <%=new Date()%>
    <h1>문제 추가</h1>
    <form method="post"  action="AddQ">
       <table class="type09">

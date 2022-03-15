@@ -13,8 +13,8 @@ public class ConnectionDB {
 		try {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://54.242.127.2:3306/test?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
-			conn = DriverManager.getConnection(url, "test", "1234");
+			String url = "jdbc:mysql://18.205.188.103:3306/test?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
+			conn = DriverManager.getConnection(url, "lion", "1234");
 			
 		}catch (Exception e) {
 			System.out.println(e.getMessage());

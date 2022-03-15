@@ -60,8 +60,6 @@ h1 {
 </head>
 
 <body>
-	<%=new Date()%>
-     
 	<h1>🤷‍♀️우리 강사님은 어떤분일까요~?🤷‍♂️</h1><br>
 	<button class="btn btn-a" onclick="location.href='createExamNum' ">접 수</button><br>
 	<button class="btn btn-a" onclick="location.href='Exam' ">시험응시</button><br>
