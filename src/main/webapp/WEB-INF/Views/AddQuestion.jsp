@@ -43,51 +43,7 @@ table.type09 td {
 <body>
 	<%=new Date()%>
 	<h1>문제 추가</h1>
-	<!-- <form method="post" action="AddQuestion">
-		<table border="1" bordercolor="#A9E2F3" align="center"
-			style="border-collapse: collapse">
-			<thead>
-				<tr height="20px">
-					<th colspan="2" bgcolor="#CEE3F6">문제 추가</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>문제 : </b></td>
-					<td width="500"><input type="text" name="ques" value=""
-						size="20" maxlength="100"></td>
-				</tr>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>보기 1 : </b></td>
-					<td width="500"><input type="text" name="n1" value=""
-						size="20" maxlength="10"></td>
-				</tr>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>보기 2 : </b></td>
-					<td width="500"><input type="text" name="n2" value=""
-						size="20" maxlength="10"></td>
-				</tr>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>보기 3 : </b></td>
-					<td width="500"><input type="text" name="n3" value=""
-						size="20" maxlength="10"></td>
-				</tr>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>보기 4 : </b></td>
-					<td width="500"><input type="text" name="n4" value=""
-						size="20" maxlength="10"></td>
-				</tr>
-				<tr>
-					<td bgcolor="#E6E6E6" align="center"><b>정답 : </b></td>
-					<td width="500"><input type="text" name="ans"
-						value="번호를 적어주세요 ex) 4" size="20" maxlength="10"></td>
-				</tr>
-			</tbody>
-		</table>
-		<input stylealign="center" type="submit" value="전송" /><br>
-	</form> -->
-
-	<form method="post" action="AddQuestion">
+	<form method="post" action="AddQ">
 		<table class="type09">
 			<thead>
 				<tr>
@@ -103,27 +59,27 @@ table.type09 td {
 				</tr>
 				<tr>
 					<th scope="row">보기 1</th>
-					<td><input type="text" name="ques" value="" size="20"
+					<td><input type="text" name="ex1" value="" size="20"
 						maxlength="100"></td>
 				</tr>
 				<tr>
 					<th scope="row">보기 2</th>
-					<td><input type="text" name="ques" value="" size="20"
+					<td><input type="text" name="ex2" value="" size="20"
 						maxlength="100"></td>
 				</tr>
 				<tr>
 					<th scope="row">보기 3</th>
-					<td><input type="text" name="ques" value="" size="20"
+					<td><input type="text" name="ex3" value="" size="20"
 						maxlength="100"></td>
 				</tr>
 				<tr>
 					<th scope="row">보기 4</th>
-					<td><input type="text" name="ques" value="" size="20"
+					<td><input type="text" name="ex4" value="" size="20"
 						maxlength="100"></td>
 				</tr>
 				<tr>
 					<th scope="row">정 답</th>
-					<td><input type="text" name="ques" value="" size="20"
+					<td><input type="text" name="ans" value="" size="20"
 						maxlength="100"></td>
 				</tr>
 			</tbody>
